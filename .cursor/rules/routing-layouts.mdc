@@ -1,0 +1,26 @@
+---
+description: Routing, layouts, and navigation conventions
+globs: "src/routes/**,src/layouts/**,src/views/**"
+alwaysApply: false
+---
+
+# Routing & layouts
+
+## Adding a page
+
+1. Create view in `src/views/<area>/<Page>.tsx` (thin wrapper)
+2. Lazy-import in `src/routes/Router.tsx` with `Loadable(lazy(...))`
+3. Add route under `FullLayout` or `BlankLayout` children
+4. Add sidebar entry in `src/layouts/full/vertical/sidebar/sidebaritems.ts`
+
+```tsx
+// Router.tsx pattern
+const MyPage = Loadable(lazy(() => import('../views/area/MyPage')));
+// ...
+{ path: '/my-page', element: <MyPage /> },
+```
+
+- **FullLayout**: authenticated pages with sidebar + header
+- **BlankLayout**: auth and standalone error pages
+- Catch-all `*` routes redirect to `/auth/404`
+- Keep route paths lowercase with kebab-case segments

@@ -1,0 +1,24 @@
+---
+description: shadcn/ui and styling conventions
+globs: "src/components/ui/**,src/css/**,components.json"
+alwaysApply: false
+---
+
+# shadcn/ui & styling
+
+- Config: `components.json` — style `new-york`, CSS in `src/css/globals.css`
+- **MCP**: use shadcn MCP tools to search registries, view examples, and get add commands before writing custom UI
+- Add components: MCP `get_add_command_for_items` → run command; fallback: `npx shadcn@latest add <name>`
+- Merge classes with `cn()` from `src/lib/utils`
+
+```tsx
+import { cn } from 'src/lib/utils'
+<Button className={cn('mt-4', className)} />
+```
+
+- Tailwind v4: tokens defined in `@theme` / `@theme inline` in `globals.css`
+- Dark mode: `ThemeProvider` toggles `.dark` on `<html>`; use `dark:` variants
+- Button has custom variants (`lightprimary`, `outlinesuccess`, etc.) — reuse before adding new ones
+- Icons: Lucide in ui components; Solar/Iconify (`solar:*`) in layout and sidebar
+
+Do not edit generated ui files for one-off styling — pass `className` or wrap in a shared component.

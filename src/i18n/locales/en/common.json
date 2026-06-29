@@ -1,0 +1,151 @@
+{
+  "app": {
+    "name": "Neosync",
+    "comingSoon": "Coming soon",
+    "comingSoonDescription": "This module is under development and will be available in a future release."
+  },
+  "header": {
+    "searchPlaceholder": "Search products, categories…",
+    "notifications": "Notifications",
+    "english": "English",
+    "arabic": "Arabic"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "vendorManagement": "Vendor Management",
+    "customerManagement": "Customer Management",
+    "warehouseManagement": "Warehouse Management",
+    "orderManagement": "Order Management",
+    "saleOrders": "Sale Orders",
+    "purchaseOrders": "Purchase Orders",
+    "productManagement": "Product Management",
+    "catalogue": "Catalogue",
+    "productSync": "Product Sync",
+    "priceDistribution": "Price Distribution",
+    "shippingCompanies": "Shipping Companies",
+    "reportAnalytics": "Report & Analytics",
+    "salesReport": "Sales Report",
+    "orderReport": "Order Report",
+    "inventoryReport": "Inventory Report",
+    "channelReport": "Channel Performance",
+    "customerReport": "Customer Reports",
+    "userPermissions": "User & Permissions",
+    "staffMembers": "Staff Members",
+    "rolesPermissions": "Roles & Permissions",
+    "activityLog": "Activity Log",
+    "account": "Account",
+    "subscription": "Subscription",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "support": "Support",
+    "templateDemos": "Template Demos"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "Dashboard",
+      "subtitle": "Welcome back. Overview of your commerce operations."
+    },
+    "vendors": {
+      "title": "Vendors & Manufacturers",
+      "subtitle": "Manage your supplier network, factories, and vendor relationships."
+    },
+    "customers": {
+      "title": "Customers",
+      "subtitle": "Manage customer profiles and order history."
+    },
+    "warehouses": {
+      "title": "Warehouses",
+      "subtitle": "Manage warehouse locations and stock levels."
+    },
+    "saleOrders": {
+      "title": "Sale Orders",
+      "subtitle": "View and manage sales orders across channels."
+    },
+    "purchaseOrders": {
+      "title": "Purchase Orders",
+      "subtitle": "View and manage purchase orders from vendors."
+    },
+    "catalogue": {
+      "title": "Catalogue",
+      "subtitle": "Manage your product catalogue in one place."
+    },
+    "productSync": {
+      "title": "Product Sync",
+      "subtitle": "Map and sync products to sales channels."
+    },
+    "pricing": {
+      "title": "Price Distribution",
+      "subtitle": "Manage base prices and channel-specific pricing."
+    },
+    "shipping": {
+      "title": "Shipping Companies",
+      "subtitle": "Manage shipping partners and logistics providers."
+    },
+    "salesReport": {
+      "title": "Sales Report",
+      "subtitle": "Sales performance and trends."
+    },
+    "orderReport": {
+      "title": "Order Report",
+      "subtitle": "Order distribution and channel analytics."
+    },
+    "inventoryReport": {
+      "title": "Inventory Report",
+      "subtitle": "Stock levels, aging, and warehouse breakdown."
+    },
+    "channelReport": {
+      "title": "Channel Performance",
+      "subtitle": "Revenue and orders by sales channel."
+    },
+    "customerReport": {
+      "title": "Customer Reports",
+      "subtitle": "Customer growth and engagement metrics."
+    },
+    "staff": {
+      "title": "Staff Members",
+      "subtitle": "Manage team members and access."
+    },
+    "roles": {
+      "title": "Roles & Permissions",
+      "subtitle": "Configure role-based access across modules."
+    },
+    "activityLog": {
+      "title": "Activity Log",
+      "subtitle": "Audit trail of system and user actions."
+    },
+    "subscription": {
+      "title": "Subscription",
+      "subtitle": "Manage your plan, billing, and invoices."
+    },
+    "notifications": {
+      "title": "Notifications",
+      "subtitle": "System alerts and activity updates."
+    },
+    "settings": {
+      "title": "Profile Settings",
+      "subtitle": "Manage personal and business profile information."
+    },
+    "support": {
+      "title": "Support",
+      "subtitle": "Customer support and help center."
+    },
+    "template": {
+      "title": "Template Demos",
+      "subtitle": "Legacy theme components for reference during development."
+    }
+  },
+  "template": {
+    "modernDashboard": "Modern Dashboard",
+    "notes": "Notes App",
+    "tickets": "Tickets",
+    "createTicket": "Create Ticket",
+    "blog": "Blog",
+    "form": "Form Demo",
+    "table": "Table Demo",
+    "userProfile": "User Profile",
+    "icons": "Icons",
+    "authLogin": "Auth Login (Template)",
+    "authRegister": "Auth Register (Template)",
+    "maintenance": "Maintenance"
+  }
+}

@@ -5,6 +5,7 @@
 @import './layouts/container.css' layer(utilities);
 @import './layouts/sidebar.css' layer(utilities);
 @import './layouts/header.css' layer(utilities);
+@import './layouts/rtl.css' layer(utilities);
 @import './override/reboot.css' layer(utilities);
 @import 'tw-animate-css';
 
@@ -110,7 +111,7 @@ body {
   --card-foreground: var(--link);
   --popover: var(--white);
   --popover-foreground: var(--link);
-  --primary: #5d87ff;
+  --primary: #3b82f6;
   --primary-foreground: var(--white);
   --secondary: #49beff;
   --secondary-foreground: var(--white);
@@ -170,7 +171,7 @@ body {
   --card-foreground: var(--white);
   --popover: #333f55;
   --popover-foreground: var(--white);
-  --primary: #5d87ff;
+  --primary: #3b82f6;
   --primary-foreground: var(--white);
   --secondary: #49beff;
   --secondary-foreground: var(--white);

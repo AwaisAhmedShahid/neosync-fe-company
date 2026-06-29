@@ -1,13 +1,22 @@
 .page-wrapper {
-    margin-left: calc(0px + 270px);
+    margin-inline-start: 270px;
+    margin-inline-end: 0;
     transition: .2s ease-in;
 }
+
+html[dir="rtl"] .page-wrapper {
+    margin-inline-start: 0;
+    margin-inline-end: 270px;
+}
+
 .rounded-bars .apexcharts-bar-series.apexcharts-plot-series .apexcharts-series path {
     clip-path: inset(0 0 5% 0 round 20px);
   }
+
 @media screen and (max-width:1279px) {
-    .page-wrapper{
-        margin-left: 0;
+    .page-wrapper,
+    html[dir="rtl"] .page-wrapper {
+        margin-inline-start: 0;
+        margin-inline-end: 0;
     }
 }
-

@@ -1,25 +1,21 @@
-
-
-
-
-
-
-
-import Logo from "src/assets/images/logos/dark-logo.svg";
-import Logowhite from "src/assets/images/logos/light-logo.svg";
-
+import { useTranslation } from 'react-i18next'
+import neosyncLogo from 'src/assets/images/logos/neosync-logo.png'
 
 const FullLogo = () => {
+  const { t } = useTranslation('common')
+
   return (
+    <div className="flex items-center gap-2.5 min-w-0">
+      <img
+        src={neosyncLogo}
+        alt={t('app.name')}
+        className="size-9 shrink-0 rounded-[10px]"
+      />
+      <span className="text-lg font-semibold text-foreground truncate">
+        {t('app.name')}
+      </span>
+    </div>
+  )
+}
 
-
-    <>
-      {/* Dark Logo   */}
-      <img src={Logo} alt="logo" className="block dark:hidden rtl:scale-x-[-1]" />
-      {/* Light Logo  */}
-      <img src={Logowhite} alt="logo" className="hidden dark:block rtl:scale-x-[-1]" />
-    </>
-  );
-};
-
-export default FullLogo;
+export default FullLogo

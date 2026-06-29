@@ -1,0 +1,24 @@
+---
+description: Keep AGENTS.md and Cursor rules in sync with codebase changes
+alwaysApply: true
+---
+
+# Cursor context maintenance
+
+When completing a task that changes project structure, update Cursor files in the same change set.
+
+## Checklist
+
+- **New route** → `Router.tsx`, `sidebaritems.ts`, `AGENTS.md` routes table
+- **New feature app** → document in `AGENTS.md` architecture; add context/api/views pattern to `react-components.mdc` if novel
+- **New layout or provider** → `AGENTS.md` + `routing-layouts.mdc`
+- **New ui primitive or shadcn config change** → note in `shadcn-ui.mdc`
+- **Tooling change** (scripts, build, deps, MCP) → `AGENTS.md` commands/stack line
+- **MCP config change** → `.cursor/mcp.json`; re-run `npx shadcn@latest mcp init --client cursor` if needed
+
+## Principles
+
+- Keep rules under ~50 lines; one concern per `.mdc` file
+- `AGENTS.md` is the detailed reference; `.mdc` rules are quick reminders
+- Remove stale entries (deleted routes, renamed folders) when you touch these files
+- Do not create extra markdown docs unless the user asks

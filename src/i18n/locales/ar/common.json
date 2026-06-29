@@ -1,0 +1,151 @@
+{
+  "app": {
+    "name": "نيو سينك",
+    "comingSoon": "قريباً",
+    "comingSoonDescription": "هذه الوحدة قيد التطوير وستكون متاحة في إصدار مستقبلي."
+  },
+  "header": {
+    "searchPlaceholder": "ابحث عن المنتجات والفئات…",
+    "notifications": "الإشعارات",
+    "english": "الإنجليزية",
+    "arabic": "العربية"
+  },
+  "nav": {
+    "dashboard": "لوحة التحكم",
+    "vendorManagement": "إدارة الموردين",
+    "customerManagement": "إدارة العملاء",
+    "warehouseManagement": "إدارة المستودعات",
+    "orderManagement": "إدارة الطلبات",
+    "saleOrders": "طلبات البيع",
+    "purchaseOrders": "طلبات الشراء",
+    "productManagement": "إدارة المنتجات",
+    "catalogue": "الكتالوج",
+    "productSync": "مزامنة المنتجات",
+    "priceDistribution": "توزيع الأسعار",
+    "shippingCompanies": "شركات الشحن",
+    "reportAnalytics": "التقارير والتحليلات",
+    "salesReport": "تقرير المبيعات",
+    "orderReport": "تقرير الطلبات",
+    "inventoryReport": "تقرير المخزون",
+    "channelReport": "أداء القنوات",
+    "customerReport": "تقارير العملاء",
+    "userPermissions": "المستخدمون والصلاحيات",
+    "staffMembers": "أعضاء الفريق",
+    "rolesPermissions": "الأدوار والصلاحيات",
+    "activityLog": "سجل النشاط",
+    "account": "الحساب",
+    "subscription": "الاشتراك",
+    "notifications": "الإشعارات",
+    "settings": "الإعدادات",
+    "support": "الدعم",
+    "templateDemos": "عروض القالب"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "لوحة التحكم",
+      "subtitle": "مرحباً بعودتك. نظرة عامة على عمليات التجارة الخاصة بك."
+    },
+    "vendors": {
+      "title": "الموردون والمصنعون",
+      "subtitle": "إدارة شبكة الموردين والمصانع وعلاقات البائعين."
+    },
+    "customers": {
+      "title": "العملاء",
+      "subtitle": "إدارة ملفات العملاء وسجل الطلبات."
+    },
+    "warehouses": {
+      "title": "المستودعات",
+      "subtitle": "إدارة مواقع المستودعات ومستويات المخزون."
+    },
+    "saleOrders": {
+      "title": "طلبات البيع",
+      "subtitle": "عرض وإدارة طلبات البيع عبر القنوات."
+    },
+    "purchaseOrders": {
+      "title": "طلبات الشراء",
+      "subtitle": "عرض وإدارة طلبات الشراء من الموردين."
+    },
+    "catalogue": {
+      "title": "الكتالوج",
+      "subtitle": "إدارة كتالوج المنتجات في مكان واحد."
+    },
+    "productSync": {
+      "title": "مزامنة المنتجات",
+      "subtitle": "ربط ومزامنة المنتجات مع قنوات البيع."
+    },
+    "pricing": {
+      "title": "توزيع الأسعار",
+      "subtitle": "إدارة الأسعار الأساسية وأسعار القنوات."
+    },
+    "shipping": {
+      "title": "شركات الشحن",
+      "subtitle": "إدارة شركاء الشحن ومقدمي الخدمات اللوجستية."
+    },
+    "salesReport": {
+      "title": "تقرير المبيعات",
+      "subtitle": "أداء المبيعات والاتجاهات."
+    },
+    "orderReport": {
+      "title": "تقرير الطلبات",
+      "subtitle": "توزيع الطلبات وتحليلات القنوات."
+    },
+    "inventoryReport": {
+      "title": "تقرير المخزون",
+      "subtitle": "مستويات المخزون والتقادم وتوزيع المستودعات."
+    },
+    "channelReport": {
+      "title": "أداء القنوات",
+      "subtitle": "الإيرادات والطلبات حسب قناة البيع."
+    },
+    "customerReport": {
+      "title": "تقارير العملاء",
+      "subtitle": "نمو العملاء ومقاييس التفاعل."
+    },
+    "staff": {
+      "title": "أعضاء الفريق",
+      "subtitle": "إدارة أعضاء الفريق والوصول."
+    },
+    "roles": {
+      "title": "الأدوار والصلاحيات",
+      "subtitle": "تكوين الوصول القائم على الأدوار عبر الوحدات."
+    },
+    "activityLog": {
+      "title": "سجل النشاط",
+      "subtitle": "سجل تدقيق إجراءات النظام والمستخدمين."
+    },
+    "subscription": {
+      "title": "الاشتراك",
+      "subtitle": "إدارة خطتك والفوترة والفواتير."
+    },
+    "notifications": {
+      "title": "الإشعارات",
+      "subtitle": "تنبيهات النظام وتحديثات النشاط."
+    },
+    "settings": {
+      "title": "إعدادات الملف الشخصي",
+      "subtitle": "إدارة المعلومات الشخصية والتجارية."
+    },
+    "support": {
+      "title": "الدعم",
+      "subtitle": "دعم العملاء ومركز المساعدة."
+    },
+    "template": {
+      "title": "عروض القالب",
+      "subtitle": "مكونات القالب القديمة للمرجع أثناء التطوير."
+    }
+  },
+  "template": {
+    "modernDashboard": "لوحة التحكم الحديثة",
+    "notes": "تطبيق الملاحظات",
+    "tickets": "التذاكر",
+    "createTicket": "إنشاء تذكرة",
+    "blog": "المدونة",
+    "form": "عرض النموذج",
+    "table": "عرض الجدول",
+    "userProfile": "الملف الشخصي",
+    "icons": "الأيقونات",
+    "authLogin": "تسجيل الدخول (قالب)",
+    "authRegister": "التسجيل (قالب)",
+    "maintenance": "الصيانة"
+  }
+}

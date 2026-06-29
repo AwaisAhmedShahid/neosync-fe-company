@@ -1,0 +1,41 @@
+---
+description: React component and feature patterns
+globs: "**/*.{tsx,ts}"
+alwaysApply: false
+---
+
+# React patterns
+
+## File roles
+
+- `src/views/**` — page wrappers: breadcrumbs (`BreadcrumbComp`), minimal layout
+- `src/components/apps/**` — feature UI; wrap with context provider at top level
+- `src/components/ui/**` — shadcn primitives; prefer composition over edits
+- `src/components/shared/**` — cross-feature helpers (`CardBox`, etc.)
+
+## Conventions
+
+```tsx
+// ✅ View: thin page shell
+const Notes = () => (
+  <>
+    <BreadcrumbComp title="Notes app" items={BCrumb} />
+    <NotesApp />
+  </>
+);
+
+// ✅ Feature root wraps its provider
+export default function NotesApp() {
+  return (
+    <NotesProvider>
+      <NotesContent />
+    </NotesProvider>
+  );
+}
+```
+
+- Functional components with explicit prop/context interfaces
+- Context pattern: `createContext` + provider in `src/context/<feature>/index.tsx`
+- Types in `src/types/apps/<feature>.ts`
+- Use `FC` or explicit return types consistently with the surrounding file
+- No `src/hooks/` folder yet — colocate hooks in feature folders if needed

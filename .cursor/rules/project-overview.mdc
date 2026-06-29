@@ -1,0 +1,20 @@
+---
+description: Core project context — stack, structure, and conventions
+alwaysApply: true
+---
+
+# Project overview
+
+Neosync admin frontend: **Vite + React 19 + TypeScript + Tailwind CSS v4 + shadcn/ui**.
+
+Read `AGENTS.md` for full architecture. Key facts:
+
+- **Entry**: `src/main.tsx` → `App.tsx` (ThemeProvider + RouterProvider)
+- **Routes**: `src/routes/Router.tsx` — lazy-loaded via `Loadable`
+- **Layouts**: `FullLayout` (sidebar/header) vs `BlankLayout` (auth)
+- **Data**: mock static files in `src/api/**`, state in `src/context/**`
+- **Imports**: use `src/` path alias (`import X from 'src/...'`)
+- **Styling**: `cn()` from `src/lib/utils`; theme tokens in `src/css/globals.css`
+- **Build output**: `dist/` (Netlify-ready)
+
+Minimize scope. Match existing patterns in neighboring files before introducing new abstractions.
