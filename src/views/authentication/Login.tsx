@@ -1,13 +1,17 @@
-import { useState } from 'react'
-import { Link } from 'react-router'
+import { FormEvent, useState } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
+import { isAxiosError } from 'axios'
 import { Eye, EyeOff } from 'lucide-react'
+import { toast } from 'sonner'
+import { login } from 'src/api/auth/auth-api'
 import AuthSplitLayout from 'src/layouts/auth/AuthSplitLayout'
 import { Button } from 'src/components/ui/button'
 import { Checkbox } from 'src/components/ui/checkbox'
 import { Input } from 'src/components/ui/input'
 import { Label } from 'src/components/ui/label'
 import { cn } from 'src/lib/utils'
+import { useAuthStore } from 'src/stores/auth-store'
 
 const AUTH_PRIMARY = '#3B59FF'
 
@@ -16,7 +20,49 @@ const fieldClassName =
 
 const Login = () => {
   const { t } = useTranslation('auth')
+  const navigate = useNavigate()
+  const location = useLocation()
+  const setAuth = useAuthStore((state) => state.setAuth)
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setError(null)
+    setIsSubmitting(true)
+
+    try {
+      const response = await login({ email, password })
+
+      if (!response.success) {
+        setError(response.message)
+        return
+      }
+
+      const { user, accessToken, expiresAt } = response.data
+      setAuth(user, accessToken, expiresAt)
+      toast.success(response.message)
+
+      const redirectTo = (() => {
+        const from = (location.state as { from?: string } | null)?.from
+        return from && from !== '/auth/login' ? from : '/'
+      })()
+
+      navigate(redirectTo, { replace: true })
+    } catch (err) {
+      const message = isAxiosError(err)
+        ? (err.response?.data as { message?: string } | undefined)?.message
+        : undefined
+
+      setError(message ?? t('login.errors.generic'))
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <AuthSplitLayout>
@@ -27,7 +73,13 @@ const Login = () => {
         <p className="text-base text-[#6B7280]">{t('login.subtitle')}</p>
       </div>
 
-      <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+      <form className="space-y-5" onSubmit={handleSubmit}>
+        {error ? (
+          <p className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+            {error}
+          </p>
+        ) : null}
+
         <div className="space-y-2">
           <Label htmlFor="email" className="text-sm font-medium text-[#374151]">
             {t('login.email')}
@@ -35,8 +87,13 @@ const Login = () => {
           <Input
             id="email"
             type="email"
+            autoComplete="email"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
             placeholder={t('login.emailPlaceholder')}
             className={fieldClassName}
+            disabled={isSubmitting}
           />
         </div>
 
@@ -48,14 +105,20 @@ const Login = () => {
             <Input
               id="password"
               type={showPassword ? 'text' : 'password'}
+              autoComplete="current-password"
+              required
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
               placeholder={t('login.passwordPlaceholder')}
               className={cn(fieldClassName, 'pe-11')}
+              disabled={isSubmitting}
             />
             <button
               type="button"
               onClick={() => setShowPassword((prev) => !prev)}
               className="absolute end-3 top-1/2 -translate-y-1/2 text-[#9CA3AF] hover:text-[#6B7280]"
               aria-label={showPassword ? t('login.hidePassword') : t('login.showPassword')}
+              disabled={isSubmitting}
             >
               {showPassword ? <Eye className="size-5" /> : <EyeOff className="size-5" />}
             </button>
@@ -87,11 +150,11 @@ const Login = () => {
 
         <Button
           type="submit"
-          className="h-12 w-full rounded-lg text-base font-semibold hover:opacity-90"
+          disabled={isSubmitting}
+          className="h-12 w-full rounded-lg text-base font-semibold hover:opacity-90 disabled:opacity-60"
           style={{ backgroundColor: AUTH_PRIMARY }}
-          asChild
         >
-          <Link to="/">{t('login.submit')}</Link>
+          {isSubmitting ? t('login.submitting') : t('login.submit')}
         </Button>
       </form>
     </AuthSplitLayout>

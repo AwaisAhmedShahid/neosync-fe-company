@@ -3,7 +3,7 @@
 import { Icon } from '@iconify/react';
 import * as profileData from './data';
 import SimpleBar from 'simplebar-react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import profileimg from 'src/assets/images/profile/user-1.jpg';
 import {
   DropdownMenu,
@@ -13,8 +13,17 @@ import {
   DropdownMenuTrigger,
 } from 'src/components/ui/dropdown-menu';
 import { Button } from 'src/components/ui/button';
+import { useAuthStore } from 'src/stores/auth-store';
 
 const Profile = () => {
+  const navigate = useNavigate();
+  const clearAuth = useAuthStore((state) => state.clearAuth);
+
+  const handleLogout = () => {
+    clearAuth();
+    navigate('/auth/login', { replace: true });
+  };
+
   return (
     <div className="relative group/menu ps-1 sm:ps-15 shrink-0">
       <DropdownMenu>
@@ -58,11 +67,12 @@ const Profile = () => {
 
           <div className="pt-2 px-4">
             <Button
-              asChild
+              type="button"
               variant="outline"
               className="w-full rounded-md"
+              onClick={handleLogout}
             >
-              <Link to="/auth/login">Logout</Link>
+              Logout
             </Button>
           </div>
         </DropdownMenuContent>
